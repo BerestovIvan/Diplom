@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using BLL.Exceptions;
 using BLL.Models;
 using BLL.ServiceInterfaces;
 using DAL.Authorization.RepositoryInterfaces;
@@ -9,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BLL.Services
 {
-    public class AuthorizationService : IAuthorizationService
+    public class AuthorizationService : IAuthorizationServiceBll
     {
         readonly IAuthorizationRepository authorizationRepository;
         readonly IMapper mapper;

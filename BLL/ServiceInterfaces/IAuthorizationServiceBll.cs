@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace BLL.ServiceInterfaces
 {
-    public interface IAuthorizationService
+    public interface IAuthorizationServiceBll
     {
         Task<IdentityResult> Register(RegisterModel registerModel);
         Task<IdentityResult> RegisterAdmin(RegisterModel registerModel);

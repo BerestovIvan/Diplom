@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Diplom.ServiceExtensions;
+using Diplom.Middleware;
 
 namespace Diplom
 {
@@ -29,8 +30,6 @@ namespace Diplom
             services.AddIdentity();
 
             services.AddAuthentication(Configuration);
-
-
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -47,8 +46,15 @@ namespace Diplom
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseSession();
+
+            app.UseSetAuthorizationHeader();
+
+            app.UseSetUserHeader();
+
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
