@@ -19,11 +19,18 @@ namespace Diplom
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc().AddSessionStateTempDataProvider();
+            services.AddSession();  
+
             services.AddControllersWithViews();
 
             services.AddDbContext(Configuration);
 
             services.AddIdentity();
+
+            services.AddAuthentication(Configuration);
+
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
