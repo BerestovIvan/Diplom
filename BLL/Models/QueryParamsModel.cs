@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BLL.Models
 {
-    public class RegisterModel
+    public class QueryParamsModel
     {
-        public string Email { get; set; }
-        public string Password { get; set; }
+        public Guid? TopicId { get; set; }
+        public string UserId { get; set; }
     }
 }

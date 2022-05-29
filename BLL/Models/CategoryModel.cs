@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace BLL.Models
 {
-    public class RegisterModel
+    public class CategoryModel
     {
-        public string Email { get; set; }
-        public string Password { get; set; }
+        public Guid Id { get; set; }
+        public string Title { get; set; }
+        public int ArticleNumber { get; set; }
     }
 }
